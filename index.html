@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Java Developer</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts for a cool font (example: 'Poppins') -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000; /* Set background to black */
+      color: #fff; /* Set text to white */
+    }
+
+    h1, h2, h3, .text-highlight {
+      color: #fdd835; /* Set headings and highlight text to yellow */
+    }
+
+    nav a {
+      color: #fff; /* Make navbar links white */
+    }
+
+    nav a:hover {
+      color: #fdd835; /* Change hover to yellow */
+    }
+
+    .bg-custom {
+      background-color: #000; /* Set sections to black */
+    }
+
+    button:hover {
+      background-color: #fdd835;
+      color: #000;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      width: 0%;
+      background-color: white;
+      height: 100%;
+      border-radius: inherit;
+      transition: width 1s ease-in-out;
+    }
+
+    .progress-bar-container {
+      background-color: #4b5563;
+      border-radius: 9999px;
+      height: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Progress Bar Animation on hover */
+    .skill:hover .progress-bar {
+      width: var(--progress);
+    }
+
+    /* Bubble Background */
+    .bubbles {
+      position: relative;
+      overflow: hidden; /* Ensure bubbles don't overflow outside the container */
+      z-index: 1; /* Ensures bubbles are behind content */
+    }
+
+    .bubbles::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 2%, transparent 20%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 2%, transparent 20%),
+                  radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.15) 2%, transparent 20%);
+      z-index: -1; /* Places the bubbles behind everything */
+      background-size: 200px 200px;
+      opacity: 0.3;
+      animation: float 6s linear infinite; /* Apply float animation */
+    }
+
+    /* Keyframes for bubble float animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0); /* Start position */
+      }
+      50% {
+        transform: translateY(-30px); /* Float up */
+      }
+      100% {
+        transform: translateY(0); /* Return to start */
+      }
+    }
+  </style>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Java Developer Portfolio: showcasing projects, skills, and contact details.">
+  <meta property="og:title" content="Java Developer Portfolio">
+  <meta property="og:description" content="Explore my Java projects, skills, and get in touch for opportunities.">
+  <meta property="og:image" content="link-to-your-image">
+  <meta property="og:url" content="your-website-url">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="bg-custom shadow">
+  <div class="container mx-auto p-5 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">PORTFOLIO</h1>
+    <nav>
+      <a href="#about" class="mr-5 font-bold hover:underline transition duration-200">About</a>
+      <a href="#skills" class="mr-5 font-bold hover:underline transition duration-200">Skills</a>
+      <a href="#projects" class="mr-5 font-bold hover:underline transition duration-200">Projects</a>
+      <a href="#contact" class="font-bold hover:underline transition duration-200">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-black text-white min-h-screen flex items-center justify-center bubbles">
+  <div class="container mx-auto flex flex-col lg:flex-row items-center justify-center">
+    <!-- Image on the Left -->
+    <div class="flex-shrink-0">
+      <img src="final image.jpg" alt="kothmir saketh" class="rounded-full mx-auto lg:mx-0" style="width: 450px; height: 450px;">
+    </div>
+
+    <!-- Text and Button on the Right -->
+    <div class="lg:ml-20 text-center lg:text-left mt-10 lg:mt-0">
+      <h2 class="text-5xl font-bold">KOTHMIR SAKETH</h2>
+      <p class="text-xl mt-4">Passionate about building Java applications and web solutions</p>
+      <button class="mt-6 px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-yellow-500 hover:text-black transition duration-300">
+        <a href="https://publuu.com/flip-book/670768/1493938" download class="flex items-center justify-center">
+          <i class="fas fa-download mr-2"></i> Download Resume
+        </a>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="bg-custom py-20 bubbles">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-highlight text-center mb-8 underline">About Me</h2>
+    <p class="text-center text-xl max-w-2xl mx-auto">I'm a passionate Java developer with experience in developing front end. Currently, I'm looking for an opportunity as a fresher to leverage my skills in Java, Spring, and related technologies.</p>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-black py-20">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-highlight text-center mb-8 underline">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+
+      <!-- Java -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fas fa-coffee text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">Java</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 80%;"></div>
+        </div>
+        <p class="mt-2">80%</p>
+      </div>
+
+      <!-- MySQL -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fas fa-database text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">MySQL</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 70%;"></div>
+        </div>
+        <p class="mt-2">70%</p>
+      </div>
+
+      <!-- HTML -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fas fa-code text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">HTML</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 85%;"></div>
+        </div>
+        <p class="mt-2">85%</p>
+      </div>
+
+      <!-- CSS -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fab fa-css3-alt text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">CSS</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 75%;"></div>
+        </div>
+        <p class="mt-2">75%</p>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fab fa-js text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">JavaScript</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 65%;"></div>
+        </div>
+        <p class="mt-2">65%</p>
+      </div>
+
+      <!-- Git/Github -->
+      <div class="skill bg-gray-800 p-6 shadow rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-black">
+        <i class="fab fa-github text-white-400 text-4xl mb-3"></i>
+        <h3 class="text-2xl font-semibold">Git/Github</h3>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container w-full">
+          <div class="progress-bar" style="--progress: 80%;"></div>
+        </div>
+        <p class="mt-2">80%</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-black">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-highlight text-center mb-8 underline">Projects</h2>
+
+    <!-- Project Container -->
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg mb-10">
+      <!-- Project Title -->
+      <h3 class="text-3xl font-bold text-white mb-4">CaesarCipher</h3>
+      <!-- Project Description -->
+      <p class="text-gray-300 text-lg mb-6">
+        Developed a Python program that implements the Caesar Cipher
+        encryption algorithm, allowing users to encrypt and decrypt
+        messages with customizable shift values. This project enhanced
+        my skills in Python string manipulation, modular arithmetic, and
+        algorithm testing to ensure accurate encryption and decryption.
+      </p>
+
+      <!-- Button Container -->
+      <div class="flex justify-center space-x-4">
+        <!-- Live Demo Button -->
+        <a href="https://saketh9010.github.io/Caesarcipher/" target="_blank">
+          <button class="bg-yellow-500 text-black px-6 py-2 rounded-lg font-bold hover:bg-yellow-600 transition duration-300">
+            Live Demo
+          </button>
+        </a>
+
+        <!-- See the Code Button -->
+        <a href="https://github-link" target="_blank">
+          <button class="bg-yellow-500 text-black px-6 py-2 rounded-lg font-bold hover:bg-yellow-600 transition duration-300">
+            See the Code
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-black text-white pt-20 pb-6"> <!-- Reduced bottom padding -->
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-highlight mb-8 underline">CONTACT ME</h2>
+    <p>Feel free to reach out for any collaboration or opportunities!</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-center py-6">
+  <p>&copy; 2024 Kothmir Saketh | Follow me on
+    <a href="https://www.linkedin.com/in/saketh-kothmir-242b94285/" class="text-blue-600 hover:underline">LinkedIn</a>,
+    <a href="https://github.com/SAKETH363" class="text-blue-600 hover:underline">GitHub</a>,
+    <a href="https://wa.me/9010678332" class="text-blue-600 hover:underline">WhatsApp</a>
+  </p>
+</footer>
+
+</body>
+</html>
